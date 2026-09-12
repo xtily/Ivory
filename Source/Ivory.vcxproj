@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{86a42307-5037-4fb0-b863-92073e0d97d4}</ProjectGuid>
+    <RootNamespace>T4</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Ivory</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfAtl>false</UseOfAtl>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\Build\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Artifacts\</IntDir>
+    <IncludePath>$(ProjectDir)source;$(ProjectDir)external;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(IncludePath)</IncludePath>
+    <TargetName>External</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\Build\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Artifacts\</IntDir>
+    <IncludePath>$(ProjectDir)source;$(ProjectDir)external;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(IncludePath)</IncludePath>
+    <TargetName>External</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)..\Build\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Artifacts\</IntDir>
+    <IncludePath>$(ProjectDir)source;$(ProjectDir)external;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(IncludePath)</IncludePath>
+    <TargetName>External</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)..\Build\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Artifacts\</IntDir>
+    <IncludePath>$(ProjectDir)source;$(ProjectDir)source\features\instance.new\callgate;$(ProjectDir)source\features\instance.new\creation;$(ProjectDir)source\features\instance.new\reflection;$(ProjectDir)source\features\exploits\character;$(ProjectDir)source\features\exploits\locomotion;$(ProjectDir)source\features\exploits\environment;$(ProjectDir)source\features\exploits\audio;$(ProjectDir)source\features\exploits\utility;$(ProjectDir)external;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(IncludePath)</IncludePath>
+    <TargetName>Ivory</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)source;$(ProjectDir)source\features\instance.new\callgate;$(ProjectDir)source\features\instance.new\creation;$(ProjectDir)source\features\instance.new\reflection;$(ProjectDir)source\features\exploits\character;$(ProjectDir)source\features\exploits\locomotion;$(ProjectDir)source\features\exploits\environment;$(ProjectDir)source\features\exploits\audio;$(ProjectDir)source\features\exploits\utility;$(ProjectDir)external;$(ProjectDir)external\imgui;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;ZSTD_DISABLE_ASM;ZSTD_LEGACY_SUPPORT=0;XXH_NAMESPACE=ZSTD_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(ProjectDir)..\Build\Artifacts\$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)source;$(ProjectDir)source\features\instance.new\callgate;$(ProjectDir)source\features\instance.new\creation;$(ProjectDir)source\features\instance.new\reflection;$(ProjectDir)source\features\exploits\character;$(ProjectDir)source\features\exploits\locomotion;$(ProjectDir)source\features\exploits\environment;$(ProjectDir)source\features\exploits\audio;$(ProjectDir)source\features\exploits\utility;$(ProjectDir)external;$(ProjectDir)external\imgui;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;ZSTD_DISABLE_ASM;ZSTD_LEGACY_SUPPORT=0;XXH_NAMESPACE=ZSTD_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(ProjectDir)..\Build\Artifacts\$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)source;$(ProjectDir)source\features\instance.new\callgate;$(ProjectDir)source\features\instance.new\creation;$(ProjectDir)source\features\instance.new\reflection;$(ProjectDir)source\features\exploits\character;$(ProjectDir)source\features\exploits\locomotion;$(ProjectDir)source\features\exploits\environment;$(ProjectDir)source\features\exploits\audio;$(ProjectDir)source\features\exploits\utility;$(ProjectDir)external;$(ProjectDir)external\imgui;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;ZSTD_DISABLE_ASM;ZSTD_LEGACY_SUPPORT=0;XXH_NAMESPACE=ZSTD_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(ProjectDir)..\Build\Artifacts\$(TargetName).pdb</ProgramDatabaseFile>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <AdditionalLibraryDirectories>external\freetype\objs\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)source;$(ProjectDir)source\features\instance.new\callgate;$(ProjectDir)source\features\instance.new\creation;$(ProjectDir)source\features\instance.new\reflection;$(ProjectDir)source\features\exploits\character;$(ProjectDir)source\features\exploits\locomotion;$(ProjectDir)source\features\exploits\environment;$(ProjectDir)source\features\exploits\audio;$(ProjectDir)source\features\exploits\utility;$(ProjectDir)external;$(ProjectDir)external\imgui;$(ProjectDir)external\Clipper2Lib\include;$(ProjectDir)external\freetype\include;$(ProjectDir)external\keyauth;$(ProjectDir)external\keyauth\lib;$(ProjectDir)external\keyauth\lib\libsodium;$(ProjectDir)external\lua;$(ProjectDir)external\zstd\lib;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;ZSTD_DISABLE_ASM;ZSTD_LEGACY_SUPPORT=0;XXH_NAMESPACE=ZSTD_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(ProjectDir)..\Build\Artifacts\$(TargetName).pdb</ProgramDatabaseFile>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <AdditionalLibraryDirectories>external\freetype\objs\x64;external\keyauth\lib\curl;external\keyauth\lib\libsodium;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;freetype.lib;dwmapi.lib;libcurl.lib;libsodium.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="external\Clipper2Lib\src\clipper.engine.cpp" />
+    <ClCompile Include="source\features\lua\vm\ScriptBytecode.cpp" />
+    <ClCompile Include="source\features\lua\vm\FissionEmbed.cpp" />
+    <ClCompile Include="external\Clipper2Lib\src\clipper.offset.cpp" />
+    <ClCompile Include="external\Clipper2Lib\src\clipper.rectclip.cpp" />
+    <ClCompile Include="external\imgui\imgui.cpp" />
+    <ClCompile Include="external\imgui\imgui_draw.cpp" />
+    <ClCompile Include="external\imgui\imgui_tables.cpp" />
+    <ClCompile Include="external\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="external\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="external\imgui\imgui_freetype.cpp" />
+    <ClCompile Include="external\imgui\clip.cpp" />
+    <ClCompile Include="external\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="external\imgui\addons\imgui_addons.cpp" />
+    <ClCompile Include="external\imgui\addons\imgui_notification.cpp" />
+    <ClCompile Include="external\keyauth\auth\keyauth.cpp" />
+    <ClCompile Include="source\sdk\cache\bodyparts\bodyparts.cpp" />
+    <ClCompile Include="source\sdk\cache\core\cache.cpp" />
+    <ClCompile Include="source\features\exploits\character\avatar\avatar.cpp" />
+    <ClCompile Include="source\features\system\config\config.cpp" />
+    <ClCompile Include="source\features\lua\mcp\mcp_server.cpp" />
+    <ClCompile Include="source\features\exploits\environment\explorer\explorer.cpp" />
+    <ClCompile Include="source\features\exploits\environment\explorer\explorertextures.cpp" />
+    <ClCompile Include="source\features\combat\hbe\hbe.cpp" />
+    <ClCompile Include="source\features\system\keybind\keybind.cpp" />
+    <ClCompile Include="source\features\exploits\utility\misc\misc.cpp" />
+    <ClCompile Include="source\features\exploits\locomotion\movement\movement.cpp" />
+    <ClCompile Include="source\features\exploits\utility\freecam\freecam.cpp" />
+    <ClCompile Include="source\features\system\playerlist\playerlist.cpp" />
+    <ClCompile Include="source\features\combat\silent\mouse\mouse.cpp" />
+    <ClCompile Include="source\features\combat\silent\viewport\viewport.cpp" />
+    <ClCompile Include="source\features\combat\silent\camera\camera.cpp" />
+    <ClCompile Include="source\sdk\game\gamestate.cpp" />
+    <ClCompile Include="source\features\combat\aimbot\aimbot.cpp" />
+    <ClCompile Include="source\features\combat\trigger\trigger.cpp" />
+    <ClCompile Include="source\features\visuals\esp\esp.cpp" />
+    <ClCompile Include="source\features\visuals\chams\mesh\assetmesh.cpp" />
+    <ClCompile Include="source\features\visuals\chams\mesh\avatarmesh.cpp" />
+    <ClCompile Include="source\features\visuals\chams\gpu\meshgpu.cpp" />
+    <ClCompile Include="source\features\visuals\chams\mesh\memorymesh.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\core\memory\memory.cpp" />
+    <ClCompile Include="source\core\utility\creator\creator.cpp" />
+    <ClCompile Include="source\core\protection\antidebug\antidebug.cpp" />
+    <ClCompile Include="source\core\protection\antiattach\antiattach.cpp" />
+    <ClCompile Include="source\core\protection\antidump\antidump.cpp" />
+    <ClCompile Include="source\ui\animations\animations.cpp" />
+    <ClCompile Include="source\ui\editor\editor.cpp" />
+    <ClCompile Include="source\ui\render\render.cpp" />
+    <ClCompile Include="source\ui\menu\gui.cpp" />
+    <ClCompile Include="source\ui\menu\Menu.cpp" />
+    <ClCompile Include="source\ui\menu\elements\button.cpp" />
+    <ClCompile Include="source\ui\menu\elements\checkbox.cpp" />
+    <ClCompile Include="source\ui\menu\elements\child.cpp" />
+    <ClCompile Include="source\ui\menu\elements\coloredit.cpp" />
+    <ClCompile Include="source\ui\menu\elements\draw.cpp" />
+    <ClCompile Include="source\ui\menu\elements\dropdown.cpp" />
+    <ClCompile Include="source\ui\menu\elements\helpers.cpp" />
+    <ClCompile Include="source\ui\menu\elements\keybind.cpp">
+      <ObjectFileName>$(IntDir)menu_keybind.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="source\ui\menu\elements\section.cpp" />
+    <ClCompile Include="source\ui\menu\elements\slider.cpp" />
+    <ClCompile Include="source\ui\menu\elements\table.cpp" />
+    <ClCompile Include="source\ui\menu\elements\textfield.cpp" />
+    <ClCompile Include="source\ui\menu\elements\window.cpp" />
+    <ClCompile Include="source\\core\\scanner\\game\\game.cpp" />
+    <ClCompile Include="source\\core\\scanner\\process\\process.cpp" />
+    <ClCompile Include="source\sdk\sdk.cpp" />
+    <ClCompile Include="source\sdk\wallcheck\wallcheck.cpp" />
+    <ClCompile Include="source\features\visuals\lighting\lighting.cpp" />
+    <ClCompile Include="source\features\exploits\character\korblox\korblox.cpp" />
+    <ClCompile Include="source\features\exploits\character\headless\headless.cpp" />
+    <ClCompile Include="source\features\exploits\character\cosmetics\cosmetics.cpp" />
+    <ClCompile Include="source\features\exploits\character\recolor\recolor.cpp" />
+    <ClCompile Include="source\features\exploits\character\materialchanger\materialchanger.cpp" />
+    <ClCompile Include="source\features\exploits\utility\freezeplayer\freezeplayer.cpp" />
+    <ClCompile Include="source\features\exploits\utility\typingcheck\typingcheck.cpp" />
+    <ClCompile Include="source\features\exploits\environment\btools\btools.cpp" />
+    <ClCompile Include="source\features\exploits\character\skinchanger\skinchanger.cpp" />
+    <ClCompile Include="source\features\exploits\character\dhskinchanger\dhskinchanger.cpp" />
+    <ClCompile Include="source\features\exploits\character\rivals_skinchanger\rivals_skinchanger.cpp" />
+    <ClCompile Include="source\features\exploits\character\changer\changer.cpp" />
+    <ClCompile Include="source\features\exploits\locomotion\unified\unifiedexploits.cpp" />
+    <ClCompile Include="source\features\combat\silent\raycast\raycast.cpp" />
+    <ClCompile Include="source\features\exploits\utility\npcsystem\npcsystem.cpp" />
+    <ClCompile Include="source\features\visuals\model\modelviewer.cpp" />
+    <ClCompile Include="source\features\visuals\model\gltf\gltfloader.cpp" />
+    <ClCompile Include="source\features\visuals\model\3d\mainapi.cpp" />
+    <ClCompile Include="source\features\visuals\model\3d\parsers\objparser.cpp" />
+    <ClCompile Include="source\features\visuals\model\3d\parsers\mtlparser.cpp" />
+    <ClCompile Include="source\features\visuals\model\3d\texture\texturecache.cpp" />
+    <ClCompile Include="source\features\exploits\audio\hitsound\hitsounds.cpp" />
+    <ClCompile Include="source\features\exploits\audio\hitsound\hitsoundsdata.cpp" />
+    <ClCompile Include="source\features\visuals\hit\hit.cpp" />
+    <ClCompile Include="source\features\system\notifications\notifications.cpp" />
+    <ClCompile Include="source\\features\\lua\\vm\\LuaVM.cpp" />
+    <ClCompile Include="source\\features\\lua\\bridge\\LuaBridge.cpp" />
+    <ClCompile Include="source\\features\\lua\\drawing\\LuaDrawing.cpp" />
+    <ClCompile Include="source\\features\\lua\\gc\\LuaGc.cpp" />
+    <ClCompile Include="source\\features\\lua\\mem\\LuaMem.cpp" />
+    <ClCompile Include="source\\features\\lua\\types\\LuaTypes.cpp" />
+    <ClCompile Include="source\features\instance.new\callgate\CallGate.cpp" />
+    <ClCompile Include="source\features\instance.new\creation\InstanceCreate.cpp" />
+    <ClCompile Include="source\features\instance.new\creation\InstanceNew.cpp" />
+    <ClCompile Include="source\features\instance.new\reflection\Reflect.cpp" />
+    <ClCompile Include="source\features\exploits\environment\skybox\skybox.cpp" />
+    <ClCompile Include="source\features\visuals\manager\manager.cpp" />
+    <ClCompile Include="external\lua\lapi.c" />
+    <ClCompile Include="external\lua\lauxlib.c" />
+    <ClCompile Include="external\lua\lbaselib.c" />
+    <ClCompile Include="external\lua\lcode.c" />
+    <ClCompile Include="external\lua\lcorolib.c" />
+    <ClCompile Include="external\lua\lctype.c" />
+    <ClCompile Include="external\lua\ldblib.c" />
+    <ClCompile Include="external\lua\ldebug.c" />
+    <ClCompile Include="external\lua\ldo.c" />
+    <ClCompile Include="external\lua\ldump.c" />
+    <ClCompile Include="external\lua\lfunc.c" />
+    <ClCompile Include="external\lua\lgc.c" />
+    <ClCompile Include="external\lua\linit.c" />
+    <ClCompile Include="external\lua\liolib.c" />
+    <ClCompile Include="external\lua\llex.c" />
+    <ClCompile Include="external\lua\lmathlib.c" />
+    <ClCompile Include="external\lua\lmem.c" />
+    <ClCompile Include="external\lua\loadlib.c" />
+    <ClCompile Include="external\lua\lobject.c" />
+    <ClCompile Include="external\lua\lopcodes.c" />
+    <ClCompile Include="external\lua\loslib.c" />
+    <ClCompile Include="external\lua\lparser.c" />
+    <ClCompile Include="external\lua\lstate.c" />
+    <ClCompile Include="external\lua\lstring.c" />
+    <ClCompile Include="external\lua\lstrlib.c" />
+    <ClCompile Include="external\lua\ltable.c" />
+    <ClCompile Include="external\lua\ltablib.c" />
+    <ClCompile Include="external\lua\ltm.c" />
+    <ClCompile Include="external\lua\lundump.c" />
+    <ClCompile Include="external\lua\lutf8lib.c" />
+    <ClCompile Include="external\lua\lvm.c" />
+    <ClCompile Include="external\lua\lzio.c" />
+    <ClCompile Include="source\features\system\performance\performance.cpp" />
+    <ClCompile Include="external\zstd\lib\common\debug.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\common\entropy_common.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\common\error_private.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\common\fse_decompress.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\common\xxhash.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\common\zstd_common.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\decompress\huf_decompress.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\decompress\zstd_ddict.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\decompress\zstd_decompress.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="external\zstd\lib\decompress\zstd_decompress_block.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
+    </ClCompile>
+    <ClCompile Include="source\features\system\waypoints\waypoints.cpp" />
+    <ClCompile Include="source\features\system\serverbrowser\serverbrowser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.core.h" />
+    <ClInclude Include="source\core\utility\creator\creator.h" />
+    <ClInclude Include="source\features\combat\trigger\trigger.h" />
+    <ClInclude Include="source\features\exploits\utility\freecam\freecam.h" />
+    <ClInclude Include="source\features\exploits\locomotion\unified\unifiedexploits.h" />
+    <ClInclude Include="source\features\lua\gc\LuaGc.h" />
+    <ClInclude Include="source\features\lua\vm\ScriptBytecode.h" />
+    <ClInclude Include="source\features\lua\vm\FissionEmbed.h" />
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.engine.h" />
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.export.h" />
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.h" />
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.minkowski.h" />
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.offset.h" />
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.rectclip.h" />
+    <ClInclude Include="external\Clipper2Lib\include\clipper2\clipper.version.h" />
+    <ClInclude Include="external\imgui\imconfig.h" />
+    <ClInclude Include="external\imgui\imgui.h" />
+    <ClInclude Include="external\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="external\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="external\imgui\animation.h" />
+    <ClInclude Include="external\imgui\clip.h" />
+    <ClInclude Include="external\imgui\imgui_internal.h" />
+    <ClInclude Include="external\imgui\imstb_rectpack.h" />
+    <ClInclude Include="external\imgui\imstb_textedit.h" />
+    <ClInclude Include="external\imgui\imstb_truetype.h" />
+    <ClInclude Include="external\keyauth\auth.hpp" />
+    <ClInclude Include="external\keyauth\sk.h" />
+    <ClInclude Include="external\keyauth\utils.hpp" />
+    <ClInclude Include="external\nlohmann\json.hpp" />
+    <ClInclude Include="external\stb\stb_image.h" />
+    <ClInclude Include="external\keyauth\auth\keyauth.h" />
+    <ClInclude Include="source\features\system\settings\settings.h" />
+    <ClInclude Include="source\features\visuals\lighting\lightinghelpers.h" />
+    <ClInclude Include="source\sdk\cache\bodyparts.h" />
+    <ClInclude Include="source\sdk\cache\bodyparts\bodyparts.h" />
+    <ClInclude Include="source\sdk\cache\cache.h" />
+    <ClInclude Include="source\sdk\cache\core\cache.h" />
+    <ClInclude Include="source\features\combat\aimbot\aimbot.h" />
+    <ClInclude Include="source\features\system\config\config.h" />
+    <ClInclude Include="source\features\visuals\esp\esp.h" />
+    <ClInclude Include="source\features\visuals\chams\chams.h" />
+    <ClInclude Include="source\features\visuals\chams\mesh\assetmesh.h" />
+    <ClInclude Include="source\features\visuals\chams\mesh\avatarmesh.h" />
+    <ClInclude Include="source\features\exploits\character\avatar\avatar.h" />
+    <ClInclude Include="source\features\exploits\environment\explorer\explorer.h" />
+    <ClInclude Include="source\features\combat\hbe\hbe.h" />
+    <ClInclude Include="source\features\system\keybind\keybind.h" />
+    <ClInclude Include="source\features\exploits\utility\npcsystem\npcsystem.h" />
+    <ClInclude Include="source\features\visuals\manager\manager.h" />
+    <ClInclude Include="source\features\visuals\model\modelviewer.h" />
+    <ClInclude Include="source\features\visuals\model\gltf\gltfloader.h" />
+    <ClInclude Include="source\features\visuals\model\3d\mainapi.hpp" />
+    <ClInclude Include="source\features\visuals\model\3d\parsers\objparser.hpp" />
+    <ClInclude Include="source\features\visuals\model\3d\parsers\mtlparser.hpp" />
+    <ClInclude Include="source\features\visuals\model\3d\texture\texturecache.hpp" />
+    <ClInclude Include="source\features\visuals\model\default\defaultmodel.h" />
+    <ClInclude Include="source\features\visuals\model\custom\tung_tung\tung_tung_sahur_model.h" />
+    <ClInclude Include="source\features\exploits\utility\misc\misc.h" />
+    <ClInclude Include="source\features\exploits\utility\misc\animation.h" />
+    <ClInclude Include="source\features\exploits\character\korblox\korblox.h" />
+    <ClInclude Include="source\features\exploits\character\headless\headless.h" />
+    <ClInclude Include="source\features\exploits\character\cosmetics\cosmetics.h" />
+    <ClInclude Include="source\features\exploits\character\recolor\recolor.h" />
+    <ClInclude Include="source\features\exploits\character\materialchanger\materialchanger.h" />
+    <ClInclude Include="source\features\exploits\utility\freezeplayer\freezeplayer.h" />
+    <ClInclude Include="source\features\exploits\utility\typingcheck\typingcheck.h" />
+    <ClInclude Include="source\features\exploits\environment\btools\btools.h" />
+    <ClInclude Include="source\features\exploits\character\skinchanger\skinchanger.h" />
+    <ClInclude Include="source\features\exploits\character\dhskinchanger\dhskinchanger.h" />
+    <ClInclude Include="source\features\exploits\character\changer\changer.h" />
+    <ClInclude Include="source\features\exploits\locomotion\movement\movement.h" />
+    <ClInclude Include="source\features\system\playerlist\playerlist.h" />
+    <ClInclude Include="source\features\system\settings.h" />
+    <ClInclude Include="source\features\combat\silent\mouse\mouse.h" />
+    <ClInclude Include="source\features\combat\silent\viewport\viewport.h" />
+    <ClInclude Include="source\features\combat\silent\camera\camera.h" />
+    <ClInclude Include="source\sdk\cache\core\frame.h" />
+    <ClInclude Include="source\sdk\game\game.h" />
+    <ClInclude Include="source\core\globals.h" />
+    <ClInclude Include="source\core\logger\logger.h" />
+    <ClInclude Include="source\core\memory\memory.h" />
+    <ClInclude Include="source\core\protection\antiattach\antiattach.h" />
+    <ClInclude Include="source\core\protection\antidebug\antidebug.h" />
+    <ClInclude Include="source\core\protection\protection.h" />
+    <ClInclude Include="source\core\protection\xorstr.h" />
+    <ClInclude Include="source\core\protection\encryption\xorstr.h" />
+    <ClInclude Include="source\core\protection\antidump\antidump.h" />
+    <ClInclude Include="source\sdk\offsets\rva.h" />
+    <ClInclude Include="source\ui\assets\dexicons.h" />
+    <ClInclude Include="source\ui\assets\fontexo2medium.h" />
+    <ClInclude Include="source\ui\assets\tabicon.h" />
+    <ClInclude Include="source\ui\assets\cursorbytes.h" />
+    <ClInclude Include="source\ui\assets\orokfonts.h" />
+    <ClInclude Include="source\ui\assets\smallestpixel7.h" />
+    <ClInclude Include="source\ui\animations\animations.h" />
+    <ClInclude Include="source\ui\editor\editor.h" />
+    <ClInclude Include="source\ui\menu\settings\theme.h" />
+    <ClInclude Include="source\ui\render\render.h" />
+    <ClInclude Include="source\ui\menu\data\fonts.h" />
+    <ClInclude Include="source\ui\menu\data\images.h" />
+    <ClInclude Include="source\ui\menu\settings\colors.h" />
+    <ClInclude Include="source\ui\menu\settings\elements.h" />
+    <ClInclude Include="source\ui\menu\settings\functions.h" />
+    <ClInclude Include="source\ui\menu\settings\variables.h" />
+    <ClInclude Include="source\ui\menu\Menu.h" />
+    <ClInclude Include="source\ui\menu\assets\nav_icons.h" />
+    <ClInclude Include="source\ui\menu\assets\nav_bytes.h" />
+    <ClInclude Include="source\ui\menu\assets\font_main.h" />
+    <ClInclude Include="source\core\scanner\rescan.h" />
+    <ClInclude Include="source\sdk\math\math.h" />
+    <ClInclude Include="source\sdk\offsets\fflags.h" />
+    <ClInclude Include="source\sdk\offsets\offsets.h" />
+    <ClInclude Include="source\sdk\sdk.h" />
+    <ClInclude Include="source\sdk\wallcheck\obb.h" />
+    <ClInclude Include="source\sdk\wallcheck\wallcheck.h" />
+    <ClInclude Include="source\features\visuals\lighting\lighting.h" />
+    <ClInclude Include="source\features\combat\silent\raycast\raycast.h" />
+    <ClInclude Include="source\features\exploits\audio\hitsound\hitsounds.h" />
+    <ClInclude Include="source\features\system\performance\performance.h" />
+    <ClInclude Include="source\features\lua\LuaVM.h" />
+    <ClInclude Include="source\features\lua\LuaBridge.h" />
+    <ClInclude Include="source\features\lua\LuaDrawing.h" />
+    <ClInclude Include="source\features\lua\LuaGc.h" />
+    <ClInclude Include="source\features\lua\LuaMem.h" />
+    <ClInclude Include="source\features\lua\LuaTypes.h" />
+    <ClInclude Include="source\features\lua\MemCompat.h" />
+    <ClInclude Include="source\features\instance.new\callgate\CallGate.h" />
+    <ClInclude Include="source\features\instance.new\creation\InstanceCreate.h" />
+    <ClInclude Include="source\features\instance.new\creation\InstanceNew.h" />
+    <ClInclude Include="source\features\instance.new\reflection\Reflect.h" />
+    <ClInclude Include="source\features\exploits\environment\skybox\skybox.h" />
+    <ClInclude Include="external\lua\lapi.h" />
+    <ClInclude Include="external\lua\lauxlib.h" />
+    <ClInclude Include="external\lua\lcode.h" />
+    <ClInclude Include="external\lua\lctype.h" />
+    <ClInclude Include="external\lua\ldebug.h" />
+    <ClInclude Include="external\lua\ldo.h" />
+    <ClInclude Include="external\lua\lfunc.h" />
+    <ClInclude Include="external\lua\lgc.h" />
+    <ClInclude Include="external\lua\ljumptab.h" />
+    <ClInclude Include="external\lua\llex.h" />
+    <ClInclude Include="external\lua\llimits.h" />
+    <ClInclude Include="external\lua\lmem.h" />
+    <ClInclude Include="external\lua\lobject.h" />
+    <ClInclude Include="external\lua\lopcodes.h" />
+    <ClInclude Include="external\lua\lopnames.h" />
+    <ClInclude Include="external\lua\lparser.h" />
+    <ClInclude Include="external\lua\lprefix.h" />
+    <ClInclude Include="external\lua\lstate.h" />
+    <ClInclude Include="external\lua\lstring.h" />
+    <ClInclude Include="external\lua\ltable.h" />
+    <ClInclude Include="external\lua\ltm.h" />
+    <ClInclude Include="external\lua\lua.h" />
+    <ClInclude Include="external\lua\luaconf.h" />
+    <ClInclude Include="external\lua\lualib.h" />
+    <ClInclude Include="external\lua\lundump.h" />
+    <ClInclude Include="external\lua\lvm.h" />
+    <ClInclude Include="external\lua\lzio.h" />
+    <ClInclude Include="source\features\system\notifications\notifications.h" />
+    <ClInclude Include="source\features\exploits\audio\hitsound\hitsoundsdata.h" />
+    <ClInclude Include="source\features\exploits\audio\hitsound\hitsoundsres.h" />
+    <ClInclude Include="source\features\visuals\chams\gpu\meshgpu.h" />
+    <ClInclude Include="source\features\visuals\chams\mesh\memorymesh.h" />
+    <ClInclude Include="source\features\visuals\hit\hit.h" />
+    <ClInclude Include="source\features\system\waypoints\waypoints.h" />
+    <ClInclude Include="source\features\system\serverbrowser\serverbrowser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="source\core\memory\luck.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="source\features\combat\silent\raycast\raycastthunk.asm">
+      <FileType>Document</FileType>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="external\keyauth\keyauth.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\ui\assets\dexiconsloader.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="source\ui\assets\icon\app.rc" />
+    <ResourceCompile Include="source\features\exploits\audio\hitsound\hitsounds.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
